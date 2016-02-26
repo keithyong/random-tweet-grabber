@@ -1,6 +1,6 @@
 # Requirements
-virtualenv version 14.0.6
-python 3.5.1
+* virtualenv version 14.0.6
+* python 3.5.1
 
 # Installation
 ```
