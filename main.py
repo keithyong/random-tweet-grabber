@@ -30,6 +30,9 @@ def request_for_token(consumer_key="", consumer_secret=""):
 
     return r.json()['access_token']
 
+# grab_random_tweet_by_keyword
+# ----------------------------
+# Grabs a single random tweet based on keyword.
 def grab_random_tweet_by_keyword(keyword="", consumer_key="", consumer_secret="", tweets_to_grab=10):
     url = "https://api.twitter.com/1.1/search/tweets.json"
     bearer_token = request_for_token(consumer_key, consumer_secret)
@@ -47,8 +50,8 @@ def grab_random_tweet_by_keyword(keyword="", consumer_key="", consumer_secret=""
 
     r = requests.get(url, headers=headers, params=params)
     tweets = r.json()['statuses']
-    random_tweet = tweets[random.randint(0, tweets_to_grab - 1)]['text']
+    random_tweet = tweets[random.randint(0, tweets_to_grab - 1)]
 
     return random_tweet
 
-print(grab_random_tweet_by_keyword("python", config.consumer_key, config.consumer_secret))
+# print(grab_random_tweet_by_keyword("python", config.consumer_key, config.consumer_secret))
