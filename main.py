@@ -3,6 +3,7 @@ import json
 import base64
 import config
 import random
+import argparse
 
 # encode_consumer_key_and_secret
 # -----------------
@@ -54,7 +55,11 @@ def grab_random_tweet_by_keyword(keyword="", consumer_key="", consumer_secret=""
 
     return random_tweet
 
-tweet = grab_random_tweet_by_keyword("python", config.consumer_key, config.consumer_secret)
+parser = argparse.ArgumentParser()
+parser.add_argument("keyword", help="keyword to search for in Twitter", type=str)
+keyword = parser.parse_args().keyword
+
+tweet = grab_random_tweet_by_keyword(keyword, config.consumer_key, config.consumer_secret)
 
 print("@" + tweet['user']['screen_name'] + ": " + tweet['text'])
 if 'media' in tweet['entities']:

@@ -12,3 +12,9 @@ mv sample_config.py config.py
 ```
 
 Then, fill out `config.py` with consumer key and secret
+
+# Usage
+```
+python3 main.py <keyword>
+```
+
