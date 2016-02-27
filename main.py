@@ -6,7 +6,7 @@ import random
 import argparse
 
 # encode_consumer_key_and_secret
-# -----------------
+# ------------------------------
 # Returns encrypted consumer key/secret combination as specified by this documentation:
 # https://dev.twitter.com/oauth/application-only
 def encode_consumer_key_and_secret(consumer_key="", consumer_secret=""):
