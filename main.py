@@ -29,8 +29,24 @@ def request_for_token(consumer_key="", consumer_secret=""):
 
     return r.json()['access_token']
 
-def grab_random_tweet_by_keyword(keyword=""):
-    # TODO
-    return 0
+def grab_random_tweet_by_keyword(keyword="", consumer_key="", consumer_secret=""):
+    url = "https://api.twitter.com/1.1/search/tweets.json"
 
-print(request_for_token(config.consumer_key, config.consumer_secret))
+    bearer_token = request_for_token(consumer_key, consumer_secret)
+
+    headers = {
+        'Authorization': "Bearer " + bearer_token,
+        'Accept-Encoding': "gzip"
+    }
+
+    params = {
+        'q': keyword,
+        'result_type': "recent",
+        'count': 1
+    }
+
+    r = requests.get(url, headers=headers, params=params)
+
+    return r.json()
+
+print(grab_random_tweet_by_keyword("#kanye", config.consumer_key, config.consumer_secret))
