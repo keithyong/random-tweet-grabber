@@ -19,4 +19,12 @@ When finished, be sure to unsource by using `deactivate`.
 ```
 python3 main.py <keyword>
 ```
+## Example
+```
+$ python3 main.py cats
+@truhmkjilo: いろいろな場所の猫の日常生活 Funny Cats
 
+https://t.co/lFgyg5ExpY …
+
+#猫　#ねこ　#cat
+```
