@@ -50,8 +50,13 @@ def grab_random_tweet_by_keyword(keyword="", consumer_key="", consumer_secret=""
 
     r = requests.get(url, headers=headers, params=params)
     tweets = r.json()['statuses']
-    random_tweet = tweets[random.randint(0, tweets_to_grab - 1)]
+    random_tweet = tweets[random.randint(0, len(tweets) - 1)]
 
     return random_tweet
 
-# print(grab_random_tweet_by_keyword("python", config.consumer_key, config.consumer_secret))
+tweet = grab_random_tweet_by_keyword("python", config.consumer_key, config.consumer_secret)
+
+print("@" + tweet['user']['screen_name'] + ": " + tweet['text'])
+if 'media' in tweet['entities']:
+    for media in tweet['entities']['media']:
+        print("media: " + media['media_url'])
