@@ -17,7 +17,7 @@ cp sample_config.py config.py
 
 Then, fill out `config.py` with consumer key and secret obtained from a registered Twitter app, at https://apps.twitter.com/:
 
-Create New App > use a placeholder like http://test.com for "Website" field > manage keys and access tokens
+Create New App > use a placeholder like "http://test.com" for Website field > manage keys and access tokens
 
 When finished, be sure to unsource by using `deactivate`.
 
