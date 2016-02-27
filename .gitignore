@@ -1,2 +1,3 @@
 ENV
 config.py
+__pycache__
