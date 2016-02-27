@@ -1,8 +1,11 @@
-# Requirements
+# Random Tweet Grabber
+Grabs a random tweet based on a keyword.
+
+## Requirements
 * virtualenv
 * python 3.5.1 (should work with 2.7 also)
 
-# Setup
+## Setup
 ```
 git clone
 virtualenv -p python3 ENV
@@ -15,7 +18,7 @@ Then, fill out `config.py` with consumer key and secret obtained from a register
 
 When finished, be sure to unsource by using `deactivate`.
 
-# Usage
+## Usage
 ```
 python3 main.py <keyword>
 ```
