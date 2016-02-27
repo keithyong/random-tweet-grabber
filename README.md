@@ -8,10 +8,10 @@ git clone
 virtualenv -p python3 ENV
 source ENV/bin/activate
 pip install -r requirements.txt
-mv sample_config.py config.py
+cp sample_config.py config.py
 ```
 
-Then, fill out `config.py` with consumer key and secret
+Then, fill out `config.py` with consumer key and secret obtained from a registered Twitter app, at https://apps.twitter.com/
 
 # Usage
 ```
