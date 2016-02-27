@@ -14,11 +14,11 @@ def encode_consumer_key_and_secret(consumer_key="", consumer_secret=""):
 
     return base64.b64encode(full_key).decode("utf-8")
 
-# request_for_token
+# grab_bearer_token
 # -----------------
 # Request for application only token key and secret as specified by this documentation:
 # https://dev.twitter.com/oauth/application-only
-def request_for_token(consumer_key="", consumer_secret=""):
+def grab_bearer_token(consumer_key="", consumer_secret=""):
     url = "https://api.twitter.com/oauth2/token"
     encoded_key_secret_combo = encode_consumer_key_and_secret(config.consumer_key, config.consumer_secret)
 
@@ -36,7 +36,7 @@ def request_for_token(consumer_key="", consumer_secret=""):
 # Grabs a single random tweet based on keyword.
 def grab_random_tweet_by_keyword(keyword="", consumer_key="", consumer_secret="", tweets_to_grab=10):
     url = "https://api.twitter.com/1.1/search/tweets.json"
-    bearer_token = request_for_token(consumer_key, consumer_secret)
+    bearer_token = grab_bearer_token(consumer_key, consumer_secret)
 
     headers = {
         'Authorization': "Bearer " + bearer_token,
