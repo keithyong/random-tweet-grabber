@@ -1,6 +1,4 @@
-import oauth2 as oauth
 import requests
-import time
 import json
 import base64
 import config
@@ -31,22 +29,8 @@ def request_for_token(consumer_key="", consumer_secret=""):
 
     return r.json()['access_token']
 
-def search_by_keyword(keyword=""):
-    url = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-
-    token = oauth.Token(key=access_token, secret=access_token_secret)
-    consumer = oauth.Consumer(key=consumer_key, secret=consumer_secret)
-
-    params['oauth_token'] = token.key
-    params['oauth_consumer_key'] = consumer.key
-
-    client = oauth.Client(consumer, token)
-
-    resp, content = client.request("https://api.twitter.com/1.1/search/tweets.json?q=%40" + keyword)
-    tweets = json.loads(content.decode('utf-8'))['statuses']
-
-    for tweet in tweets:
-        print(tweet['text'])
-        print('-------------')
+def grab_random_tweet_by_keyword(keyword=""):
+    # TODO
+    return 0
 
 print(request_for_token(config.consumer_key, config.consumer_secret))
