@@ -13,6 +13,8 @@ cp sample_config.py config.py
 
 Then, fill out `config.py` with consumer key and secret obtained from a registered Twitter app, at https://apps.twitter.com/
 
+When finished, be sure to unsource by using `deactivate`.
+
 # Usage
 ```
 python3 main.py <keyword>
