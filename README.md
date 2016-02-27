@@ -7,7 +7,8 @@ Grabs a random tweet based on a keyword.
 
 ## Setup
 ```
-git clone
+git clone https://github.com/keithyong/random-tweet-grabber
+cd random-tweet-grabber
 virtualenv -p python3 ENV
 source ENV/bin/activate
 pip install -r requirements.txt
